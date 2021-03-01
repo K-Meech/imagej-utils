@@ -90,6 +90,7 @@
 		<image-transform-converters.version>0.1.3</image-transform-converters.version>
 		<mcib3d-core.version>3.96.3</mcib3d-core.version>
 		<j3dcore.version>1.6.0-scijava-2</j3dcore.version>
+		<metaimage-io.version>1.0.0</metaimage-io.version>
 
 		<!-- NB: Deploy releases to the SciJava Maven repository. -->
 		<releaseProfiles>deploy-to-scijava</releaseProfiles>
@@ -163,6 +164,11 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>de.embl.cba</groupId>
+			<artifactId>metaimage-io</artifactId>
+			<version>${metaimage-io.version}</version>
 		</dependency>
 	</dependencies>
 
