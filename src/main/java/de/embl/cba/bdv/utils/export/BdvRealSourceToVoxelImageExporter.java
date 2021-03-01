@@ -32,7 +32,7 @@ import bdv.export.ProgressWriter;
 import bdv.util.BdvHandle;
 import bdv.viewer.Interpolation;
 import bdv.viewer.Source;
-import bdv.viewer.state.SourceState;
+import bdv.viewer.SourceAndConverter;
 import de.embl.cba.bdv.utils.BdvUtils;
 import de.embl.cba.bdv.utils.Logger;
 import de.embl.cba.bdv.utils.RandomAccessibleIntervalUtils;
@@ -58,7 +58,7 @@ import static bdv.viewer.Interpolation.NLINEAR;
 
 public class BdvRealSourceToVoxelImageExporter< T extends RealType< T > & NativeType< T > >
 {
-    private final List< SourceState< ? > > sacs;
+    private final List<SourceAndConverter<?>> sacs;
     private final List< Integer > sourceIndices;
     private final RealInterval interval;
     private final int tMin;
@@ -150,7 +150,7 @@ public class BdvRealSourceToVoxelImageExporter< T extends RealType< T > & Native
             int numThreads,
             final ProgressWriter progress )
     {
-        this.sacs = bdv.getViewerPanel().getState().getSources();
+        this.sacs = bdv.getViewerPanel().state().getSources();
         this.sourceIndices = sourceIndices;
         this.interval = interval;
         this.tMin = tMin;
